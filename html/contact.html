@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <!-- Tailwindcss link -->
+    <link href="../src/output.css" rel="stylesheet" />
+    <!-- CDN Devicon -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+    <!-- CSS -->
+    <style type="text/css">
+      body {
+        font-family: "Inter", sans-serif;
+        background: white;
+      }
+
+      .hamburger-line {
+        width: 30px;
+        height: 3px;
+        margin: 5px 0;
+        display: block;
+        background: black;
+      }
+
+      .nav-fixed {
+        background-color: rgba(255, 255, 255, 0.8);
+        color: rgba(6 182 212) !important;
+      }
+
+      /* Click */
+      .hamburger-active span:nth-child(1) {
+        transform: rotate(35deg);
+      }
+      .hamburger-active span:nth-child(2) {
+        transform: scale(0);
+      }
+      .hamburger-active span:nth-child(3) {
+        transform: rotate(-35deg);
+      }
+
+      #dark-mode:checked ~ label div.btn-circle {
+        transform: translatex(28px);
+      }
+    </style>
+    <!-- Script Dark Mode -->
+    <script>
+      if (
+        localStorage.theme === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </head>
+  <body>
+    <!-- Navbar Start -->
+    <header
+      class="sticky backdrop-blur shadow top-0 left-0 w-full flex items-center z-10 text-cyan-500 transition transition-300 dark:bg-black"
+      id="header"
+    >
+      <div class="w-full flex items-center justify-between relative px-10">
+        <!-- Logo -->
+        <div>
+          <a class="font-bold text-2xl block py-6">Jamal</a>
+        </div>
+        <div class="flex items-center">
+          <button
+            id="hamburger"
+            name="hamburger"
+            type="button"
+            class="block absolute right-4 lg:hidden"
+          >
+            <span
+              class="hamburger-line transition duration-300 ease-in-out origin-top-left dark:bg-white"
+            ></span>
+            <span
+              class="hamburger-line transition duration-300 ease-in-out dark:bg-white"
+            ></span>
+            <span
+              class="hamburger-line transition duration-300 ease-in-out origin-bottom-left dark:bg-white"
+            ></span>
+          </button>
+
+          <!-- Navbar -->
+          <nav
+            id="nav-menu"
+            class="hidden absolute lg:py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full top-full right-1 lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none"
+          >
+            <ul class="block lg:flex lg:gap-10">
+              <li class="group text-center">
+                <a
+                  href="index.html"
+                  target="blank"
+                  class="flex py-2 text-black justify-center group-hover:text-cyan-500 lg:dark:text-white"
+                  >Home</a
+                >
+              </li>
+              <li class="group">
+                <a
+                  href="about.html"
+                  target="blank"
+                  class="flex py-2 text-black justify-center group-hover:text-cyan-500 lg:dark:text-white"
+                  >About</a
+                >
+              </li>
+              <li class="group">
+                <a
+                  href="skills.html"
+                  target="blank"
+                  class="flex py-2 text-black justify-center group-hover:text-cyan-500 lg:dark:text-white"
+                  >Skills</a
+                >
+              </li>
+              <li class="group">
+                <a
+                  href="contact.html"
+                  target="blank"
+                  class="flex py-2 text-black justify-center group-hover:text-cyan-500 lg:dark:text-white"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <div class="me-5 lg:me-0 lg:ms-10">
+            <input type="checkbox" class="hidden" id="dark-mode" />
+            <label for="dark-mode">
+              <div
+                id="bg-button"
+                class="mt-1 inline-block w-14 h-7 bg-slate-700 rounded-full cursor-pointer dark:bg-white"
+              >
+                <div
+                  class="btn-circle bg-cyan-500 rounded-full w-7 h-7 transition duration-300 ease-in-out"
+                ></div>
+              </div>
+            </label>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Navbar End -->
+
+    <!-- Contact Start -->
+    <section id="contact" class="pt-20 pb-5 dark:bg-black">
+      <div class="container mx-auto">
+        <h1 class="text-2xl font-semibold text-cyan-500 text-center uppercase">
+          Contact
+        </h1>
+        <p class="text-center dark:text-white">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione,
+          repellat aspernatur! Repellat, sed aut! Praesentium, delectus
+          laboriosam. In, placeat laborum. Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Sit vero nisi maxime? Iste animi fugit
+          recusandae debitis est corporis maxime.
+        </p>
+
+        <!-- Form -->
+        <div class="lg:flex lg:justify-center">
+          <div>
+            <form class="mt-10 px-5 py-3 border-2 dark:border-0">
+              <label class="text-cyan-500 text-lg text-start">Username</label>
+              <br />
+              <input
+                type="text"
+                placeholder="Username"
+                class="bg-slate-200 p-3 rounded w-[65vh] outline-0 dark:bg-white"
+              />
+              <br />
+              <br />
+
+              <label class="text-cyan-500 text-lg text-start">Email</label>
+              <br />
+              <input
+                type="email"
+                placeholder="Email"
+                class="p-3 rounded w-[65vh] bg-slate-200 text-black outline-0 dark:bg-white"
+              />
+              <br />
+              <br />
+
+              <label class="text-cyan-500 text-lg text-start">Message</label>
+              <br />
+              <textarea
+                rows="10"
+                cols="51"
+                class="bg-slate-200 p-2 text-black outline-0 rounded dark:bg-white"
+                placeholder="Message"
+              ></textarea>
+              <br />
+
+              <button
+                class="bg-cyan-500 text-white rounded-full p-2 mt-1 w-32 transition transition-300 ease-in-out hover:bg-cyan-400"
+              >
+                Send
+              </button>
+            </form>
+          </div>
+          <div class="lg:flex lg:items-center lg:ms-10 px-5 lg:px-0">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d248.91394231551257!2d114.83928000361584!3d-3.441510514387158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sid!2sid!4v1722827809484!5m2!1sid!2sid"
+              width="600"
+              height="530"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              class="w-full lg:w-[600px] mt-10 lg:mt-0"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact End -->
+    <script src="../js/main.js"></script>
+  </body>
+</html>
